@@ -4,17 +4,17 @@ Clone Tasty App
 
 Must use MVVM, Room, Retrofit, Dagger/Hilt, Coroutines, Fragments, Constraint Layout, Relative Layout.
 
-Link https://play.google.com/store/apps/details?id=com.buzzfeed.tasty
+1) Link https://play.google.com/store/apps/details?id=com.buzzfeed.tasty
 
 Food APIs
 
 Tasty API: https://rapidapi.com/blog/tasty-api-with-java-python-php-ruby-javascript-examples/ Signup and get apiKey.
 Other APIs
 
-https://spoonacular.com/food-api
-https://www.themealdb.com/api.php
-https://the-api-collective.com/category/food-and-drink
-https://developer.edamam.com/edamam-docs-recipe-api
+2) https://spoonacular.com/food-api
+3) https://www.themealdb.com/api.php
+4) https://the-api-collective.com/category/food-and-drink
+5) https://developer.edamam.com/edamam-docs-recipe-api
 
 
 <img width="180" alt="Screenshot 2022-02-12 at 9 07 06 AM" src="https://user-images.githubusercontent.com/60433739/153708946-d7e836a6-4bcf-44d1-854b-c4d4e04a5030.png">
