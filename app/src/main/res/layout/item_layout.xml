@@ -15,9 +15,9 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/Img1"
-            android:background="@drawable/rounded_button"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_button" />
     </LinearLayout>
 
     <TextView
