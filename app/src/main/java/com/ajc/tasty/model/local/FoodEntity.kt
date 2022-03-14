@@ -12,8 +12,6 @@ data class FoodEntity(
     @ColumnInfo(name = "Language") val Lang: String,
     @ColumnInfo(name = "Preparation Time") val PreparationTime: String,
     @ColumnInfo(name = "Video") val Video: String,
-
-
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

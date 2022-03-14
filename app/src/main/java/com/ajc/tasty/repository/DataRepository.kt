@@ -23,7 +23,7 @@ class DataRepository(private val userApi: ApiService, private val dao: Dao) {
             "tasty.p.rapidapi.com",
             "dac3c9770bmsh0ad63fe981f1e6dp1b1a5bjsn5a2f7ca41c47"
         )
-        if (result?.body() != null) {
+        if (result.body() != null) {
             userLiveData.postValue(result.body())
         }
     }
@@ -40,7 +40,7 @@ class DataRepository(private val userApi: ApiService, private val dao: Dao) {
     }
 
     fun deleteDataFromDb() {
-        dao.deleteAllDataFromDB()
+    //    dao.deleteAllDataFromDB()
     }
 
 }

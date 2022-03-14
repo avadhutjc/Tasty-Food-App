@@ -12,7 +12,6 @@ class Adapter(
     private var list: MutableList<FoodEntity>,
     private val onClick: OnClick,
     private var context: Context
-
 ) : RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)

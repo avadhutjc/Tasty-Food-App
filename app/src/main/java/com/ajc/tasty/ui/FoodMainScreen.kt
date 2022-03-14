@@ -28,13 +28,12 @@ import kotlinx.coroutines.launch
 
 class FoodMainScreen : AppCompatActivity(), OnClick {
     private lateinit var adapterjoin: Adapter
-    lateinit var viewModel2: MainViewModel
-    lateinit var repository: DataRepository
+    private lateinit var mainviewmodel: MainViewModel
+    private lateinit var repository: DataRepository
     private var list = mutableListOf<Result>()
-    private var newsList = mutableListOf<FoodEntity>()
-    lateinit var dao: Dao
-
-    var manager: LinearLayoutManager? = null
+    private var foodList = mutableListOf<FoodEntity>()
+    private lateinit var dao: Dao
+    private var manager: LinearLayoutManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,18 +45,16 @@ class FoodMainScreen : AppCompatActivity(), OnClick {
         val userApi = Network.getInstance().create(ApiService::class.java)
         repository = DataRepository(userApi, dao)
         val factory = ViewModelFactory(repository)
-        viewModel2 = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
+        mainviewmodel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
         if (isNetworkAvailable()) {
             loadApi()
         }
 
-        viewModel2.getData().observe(this, Observer {
-            newsList.addAll(it)
+        mainviewmodel.getData().observe(this, Observer {
+            foodList.addAll(it)
             setRecycle()
         })
-
-
     }
 
     private fun isNetworkAvailable(): Boolean {
@@ -68,9 +65,9 @@ class FoodMainScreen : AppCompatActivity(), OnClick {
     }
 
     private fun insertDataToDb(resultModels: List<Result>) {
-        viewModel2.deleteDataFromDb()
+        mainviewmodel.deleteDataFromDb()
         resultModels.forEach {
-            val newsDb =
+            val foodDb =
                 it.name?.let { it1 ->
                     it.thumbnailUrl?.let { it2 ->
                         it.description?.let { it3 ->
@@ -85,15 +82,15 @@ class FoodMainScreen : AppCompatActivity(), OnClick {
                         }
                     }
                 }
-            if (newsDb != null) {
-                viewModel2.insertDataInDb(newsDb)
+            if (foodDb != null) {
+                mainviewmodel.insertDataInDb(foodDb)
             }
         }
     }
 
     private fun loadApi() {
-        viewModel2.createTransaction()
-        viewModel2.user.observe(this, Observer {
+        mainviewmodel.createTransaction()
+        mainviewmodel.user.observe(this, Observer {
             list.clear()
             if (it != null) {
                 CoroutineScope(Dispatchers.IO).launch {
@@ -105,7 +102,7 @@ class FoodMainScreen : AppCompatActivity(), OnClick {
     }
 
     private fun setRecycle() {
-        adapterjoin = Adapter(newsList, this, this)
+        adapterjoin = Adapter(foodList, this, this)
         recycle.adapter = adapterjoin
         recycle.layoutManager = GridLayoutManager(this,2)
     }

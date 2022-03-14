@@ -9,7 +9,8 @@ import com.ajc.tasty.repository.DataRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 /*
-In this article, we are going to discuss the internals of ViewModel which is a part of Android Architecture Components. We will first briefly discuss the usages of ViewModel in Android and then we will go in detail about how ViewModel actually works and how it retains itself on configuration changes.
+In this article, we are going to discuss the internals of ViewModel which is a part of Android Architecture Components.
+We will first briefly discuss the usages of ViewModel in Android and then we will go in detail about how ViewModel actually works and how it retains itself on configuration changes.
 
 According to the documentation, the ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
 The ViewModel class allows data to survive configuration changes such as screen rotations.

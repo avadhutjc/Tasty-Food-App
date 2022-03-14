@@ -50,6 +50,3 @@
         android:textSize="13sp"
         android:visibility="gone" />
 </RelativeLayout>
-
-
-

@@ -17,12 +17,11 @@ class ViewHolder(itemView: View, private val onClick: OnClick) : RecyclerView.Vi
             tvTitle1.text = result.Name
             tvDesc1.text = result.Desc
 
-
 //     videoView1.setVideoURI() = result.Video
 //            videoView1.setVideoPath("http://videocdn.bodybuilding.com/video/mp4/62000/62792m.mp4")
 //            videoView1.start()
             Glide.with(Img1).load(result.ImageUrl).into(Img1)
-        //    Glide.with(Img3).load(result.ImageUrl).into(Img3)
+            //    Glide.with(Img3).load(result.ImageUrl).into(Img3)
 
         }
     }
