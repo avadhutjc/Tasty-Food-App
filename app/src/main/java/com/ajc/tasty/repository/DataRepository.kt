@@ -40,7 +40,7 @@ class DataRepository(private val userApi: ApiService, private val dao: Dao) {
     }
 
     fun deleteDataFromDb() {
-    //    dao.deleteAllDataFromDB()
+       dao.deleteAllDataFromDB()
     }
 
 }
