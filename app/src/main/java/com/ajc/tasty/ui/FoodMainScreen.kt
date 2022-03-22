@@ -88,18 +88,18 @@ class FoodMainScreen : AppCompatActivity(), OnClick {
         }
     }
 
-    private fun loadApi() {
-        mainviewmodel.createTransaction()
-        mainviewmodel.user.observe(this, Observer {
-            list.clear()
-            if (it != null) {
-                CoroutineScope(Dispatchers.IO).launch {
-                    it.results?.let { it1 -> insertDataToDb(it1) }
-                }
-            }
-            list.addAll(it.results as MutableList<Result>)
-        })
-    }
+//    private fun loadApi() {
+//        mainviewmodel.createTransaction()
+//        mainviewmodel.user.observe(this, Observer {
+//            list.clear()
+//            if (it != null) {
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    it.results?.let { it1 -> insertDataToDb(it1) }
+//                }
+//            }
+//            list.addAll(it.results as MutableList<Result>)
+//        })
+//    }
 
     private fun setRecycle() {
         adapterjoin = Adapter(foodList, this, this)
