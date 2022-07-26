@@ -17,6 +17,7 @@ Other APIs
 5) https://developer.edamam.com/edamam-docs-recipe-api
 
 
+
 <img width="180" alt="Screenshot 2022-02-12 at 9 07 06 AM" src="https://user-images.githubusercontent.com/60433739/153708946-d7e836a6-4bcf-44d1-854b-c4d4e04a5030.png">
 
 
